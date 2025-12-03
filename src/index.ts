@@ -11,17 +11,10 @@ const app = express();
 app.use(express.json());
 app.use("/api/users", userRoutes);
 app.use("/api/profiles", profileRoutes);
+app.use("/api/cafes", cafeRoutes);
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
-
-//
-app.use(express.json());
-
-app.use("/api/cafes", cafeRoutes);
-
-const port = 3000;
-app.listen(port, () => console.log(`Servidor corriendo en puerto ${port}`));
